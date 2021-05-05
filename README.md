@@ -7,7 +7,10 @@
       2.Get the data sets ![Datasets](https://user-images.githubusercontent.com/75600702/117145978-1a1afb00-ad8a-11eb-8307-7447374700ac.PNG)
 
 
-      3.Drop the passangerId
+      3.Drop the cabin Feature:#Drop the cabin feature
+
+        train = train.drop(['Cabin'], axis = 1)
+        test = test.drop(['Cabin'], axis = 1)
       4.Do the data Exploration/Analysis![Analysis](https://user-images.githubusercontent.com/75600702/117146770-ed1b1800-ad8a-11eb-8879-246a4c9442c9.PNG)
 
       5.Describe the training dataset![Describe train](https://user-images.githubusercontent.com/75600702/117146967-26538800-ad8b-11eb-838a-2934ac593ca9.PNG)
@@ -26,7 +29,11 @@
 
       12.Create categories based on Age![random](https://user-images.githubusercontent.com/75600702/117149009-2ce2ff00-ad8d-11eb-9c27-3b189fac4d1c.PNG)
 
-      13.Do the same as for Fare as you did for Age on #12
+      13.Do the same as for Fare as you did for Age on #12 
+           #map each Age value to a numerical value
+             age_mapping = {'Baby': 1, 'Child': 2, 'Teenager': 3, 'Student': 4, 'Young Adult': 5, 'Adult': 6, 'Senior': 7}
+              train['AgeGroup'] = train['AgeGroup'].map(age_mapping)
+              test['AgeGroup'] = test['AgeGroup'].map(age_mapping)
       14.Build the machine model and compare the results.We need to use the predictions on the training set to compare the algorithms with each other and use the cross validation.
       a)Do Stochastic Gradient Descent (SDG):![Sto](https://user-images.githubusercontent.com/75600702/117151443-76344e00-ad8f-11eb-9a76-f33676f9916a.PNG)
 
